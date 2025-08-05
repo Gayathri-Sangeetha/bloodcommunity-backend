@@ -6,10 +6,14 @@ dotenv.config();//loading env files
 connectDB();//connecting to mongodb
 const app=express();//creating an express application
 app.use(cors());//frontend can interact with backend
+app.use(express.json());//required for req body
+const userRoutes = require('./routes/userRoutes');
+app.use('/api/users', userRoutes);
+
 
 //import routes
-const donarroutes=require('./routes/donarroutes');
-app.use('/api/donars',donarroutes);//when /api/donars is given it will go to donarroutes
+const donorRoutes=require('./routes/donorRoutes');
+app.use('/api/donors',donorRoutes);//when /api/donars is given it will go to donarroutes
 const PORT=5000;//setting server port to 5000
 
 //starting the server port

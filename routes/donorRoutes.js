@@ -9,7 +9,7 @@ const {
   getDonorById,
   updateDonor,
   deleteDonor,
-} = require('../controllers/donorcontroller');
+} = require('../controller/donorController');
 
 const router = express.Router();
 
