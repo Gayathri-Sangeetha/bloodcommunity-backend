@@ -1,11 +1,36 @@
 
 
+
+
 const express = require('express');
+const {
+  createDonor,
+  getDonors,
+  getDonorById,
+  updateDonor,
+  deleteDonor,
+} = require('../controllers/donorcontroller');
+
 const router = express.Router();
 
-// Test route
-router.get('/', (req, res) => {
-  res.send('Donor API is working!');
-});
+// @route   POST /api/donors
+// @desc    Create a new donor
+router.post('/', createDonor);
 
-module.exports = router; // Export the router
+// @route   GET /api/donors
+// @desc    Get all donors
+router.get('/', getDonors);
+
+// @route   GET /api/donors/:id
+// @desc    Get a donor by ID
+router.get('/:id', getDonorById);
+
+// @route   PUT /api/donors/:id
+// @desc    Update a donor
+router.put('/:id', updateDonor);
+
+// @route   DELETE /api/donors/:id
+// @desc    Delete a donor
+router.delete('/:id', deleteDonor);
+
+module.exports = router;
