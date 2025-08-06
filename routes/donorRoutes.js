@@ -10,7 +10,7 @@ const {
   updateDonor,
   deleteDonor,
 } = require('../controller/donorController');
-
+const protect = require('../middleware/authMiddleware'); 
 const router = express.Router();
 
 // @route   POST /api/donors
