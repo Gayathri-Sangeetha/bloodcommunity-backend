@@ -1,4 +1,4 @@
-// controllers/userController.js
+
 
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
@@ -8,8 +8,7 @@ const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
 };
 
-// @desc    Register a new user
-// @route   POST /api/users/register
+
 exports.registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -32,8 +31,6 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-// @desc    Login user
-// @route   POST /api/users/login
 exports.loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;

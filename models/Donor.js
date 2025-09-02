@@ -1,5 +1,3 @@
-// models/Donor.js
-// it is for database schems
 
 const mongoose = require('mongoose');
 //to import mongoose so we conncet with database

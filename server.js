@@ -9,16 +9,12 @@ app.use(cors());//frontend can interact with backend
 app.use(express.json());//required for req body
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
-
-
 //import routes
 const donorRoutes=require('./routes/donorRoutes');
 app.use('/api/donors',donorRoutes);//when /api/donars is given it will go to donarroutes
-const PORT=5000;//setting server port to 5000
-
 //starting the server port
-app.listen(PORT,()=>{
-    console.log(`server running on port ${PORT}`);
+app.listen(process.env.PORT,()=>{
+    console.log(`server running on port ${process.env.PORT}`);
 })
 
 

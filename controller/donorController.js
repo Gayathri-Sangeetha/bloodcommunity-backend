@@ -1,9 +1,6 @@
 
 const Donor = require('../models/Donor'); // Import Donor model
 
-// @desc    Create a new donor
-// @route   POST /api/donors
-// @access  Public
 const createDonor = async (req, res) => {
   try {
     const { name, email, phone, bloodGroup, location, available } = req.body;
@@ -30,9 +27,6 @@ const createDonor = async (req, res) => {
   }
 };
 
-// @desc    Get all donors
-// @route   GET /api/donors
-// @access  Public
 const getDonors = async (req, res) => {
   try {
     const donors = await Donor.find();
@@ -42,9 +36,6 @@ const getDonors = async (req, res) => {
   }
 };
 
-// @desc    Get single donor by ID
-// @route   GET /api/donors/:id
-// @access  Public
 const getDonorById = async (req, res) => {
   try {
     const donor = await Donor.findById(req.params.id);
@@ -57,9 +48,6 @@ const getDonorById = async (req, res) => {
   }
 };
 
-// @desc    Update donor
-// @route   PUT /api/donors/:id
-// @access  Public
 const updateDonor = async (req, res) => {
   try {
     const donor = await Donor.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -72,9 +60,6 @@ const updateDonor = async (req, res) => {
   }
 };
 
-// @desc    Delete donor
-// @route   DELETE /api/donors/:id
-// @access  Public
 const deleteDonor = async (req, res) => {
   try {
     const donor = await Donor.findByIdAndDelete(req.params.id);

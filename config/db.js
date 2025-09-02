@@ -1,4 +1,3 @@
-// config/db.js
 
 const mongoose = require('mongoose'); // Import mongoose to interact with MongoDB
 
